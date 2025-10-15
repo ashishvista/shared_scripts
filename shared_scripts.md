@@ -1,3 +1,24 @@
+const axios = require('axios');
+const HttpsProxyAgent = require('https-proxy-agent');
+
+// URL-encoded credentials if needed
+const proxyUrl = 'http://USERNAME:PASSWORD@proxy.example.com:8080';
+const httpsAgent = new HttpsProxyAgent(proxyUrl);
+
+axios.get('https://www.google.com', { httpsAgent })
+  .then(response => {
+    console.log('Status:', response.status);
+    console.log('First 200 chars of response:', response.data.substring(0, 200));
+  })
+  .catch(error => {
+    console.error('Error fetching:', error.message);
+  });
+
+
+
+
+####
+
 NODE_TLS_REJECT_UNAUTHORIZED=0 npm install
 
 npm config set strict-ssl false
@@ -26,3 +47,25 @@ const connection = lpm.createConnection({
   accountId: '12345678',
   userType: lpm.UserType.BRAND,
 });
+
+
+Step 1: Find the Process Using Port 3000
+Run:
+
+text
+netstat -aon | findstr :3000
+Look at the rightmost column; this is the PID (Process ID) of the process using port 3000.​
+
+Step 2: Kill the Process by PID
+Suppose the PID you found is 1234, run:
+
+text
+taskkill /PID 1234 /F
+Replace 1234 with your actual PID. The /F flag forces termination.​
+
+Optional: PowerShell Alternative
+You can also use:
+
+text
+Stop-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess -Force
+This PowerShell command finds and kills the process using port 3000 directly
