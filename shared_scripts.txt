@@ -14,7 +14,9 @@ axios.get('https://www.google.com', { httpsAgent })
     console.error('Error fetching:', error.message);
   });
 
+###
 
+"outFiles": ["${workspaceFolder}/dist/**/*.js"]
 ####
 
 {
