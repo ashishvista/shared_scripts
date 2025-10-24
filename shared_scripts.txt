@@ -118,3 +118,7 @@ You can also use:
 text
 Stop-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess -Force
 This PowerShell command finds and kills the process using port 3000 directly
+
+
+docker login -u iamapikey -p <your_api_key> <region>.icr.io
+docker pull <region>.icr.io/<namespace>/<image>:<tag>
