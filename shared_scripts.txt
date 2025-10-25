@@ -124,4 +124,9 @@ docker login -u iamapikey -p <your_api_key> <region>.icr.io
 docker pull <region>.icr.io/<namespace>/<image>:<tag>
 
 
+kubectl run test-pod --image=<private-registry>/<image-name>:<tag> \
+  --serviceaccount=<service-account-name> \
+  --restart=Never
+  
+
 https://www.perplexity.ai/search/how-service-account-works-in-k-FnQ9oD4ySYiIGYJXxdmvpg#0
