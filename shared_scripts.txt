@@ -122,3 +122,6 @@ This PowerShell command finds and kills the process using port 3000 directly
 
 docker login -u iamapikey -p <your_api_key> <region>.icr.io
 docker pull <region>.icr.io/<namespace>/<image>:<tag>
+
+
+https://www.perplexity.ai/search/how-service-account-works-in-k-FnQ9oD4ySYiIGYJXxdmvpg#0
