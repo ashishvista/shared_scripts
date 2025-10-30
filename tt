@@ -19,3 +19,20 @@
 R-00267204
 R-00267206
 https://www.linkedin.com/in/gaurav-singh-11860b201/
+
+
+function decodeObjectBase64(obj) {
+  const result = {};
+  for (const [key, value] of Object.entries(obj)) {
+    try {
+      result[key] = Buffer.from(value, "base64").toString("utf-8");
+    } catch {
+      result[key] = value;
+    }
+  }
+  return result;
+}
+
+// Example usage:
+const data = { name: "U2FtcGxl", status: "YWN0aXZl" };
+const decoded = decodeObjectBase64(data);
