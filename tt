@@ -36,3 +36,5 @@ function decodeObjectBase64(obj) {
 // Example usage:
 const data = { name: "U2FtcGxl", status: "YWN0aXZl" };
 const decoded = decodeObjectBase64(data);
+
+https://cloud.ibm.com/docs/cloud-shell?topic=cloud-shell-cs-ip-ranges
