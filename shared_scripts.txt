@@ -25,7 +25,7 @@ const httpsAgent = new HttpsProxyAgent(proxyUrl);
 
 axios.get('https://www.google.com', { httpsAgent })
   .then(response => {
-    console.log('Status:', response.status);
+    console.log('Status:', response.status);ˀ	
     console.log('First 200 chars of response:', response.data.substring(0, 200));
   })
   .catch(error => {

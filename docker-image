@@ -1,1 +1,9 @@
 env -0 | sort -z | tr '\0' '\n'
+https://www.crazygames.com/game/attack-of-duty
+
+
+CBR will protect management operations on your Code Engine application, but will not block public internet API requests to your Node.js REST endpoint. You need to implement application-level security or switch to private endpoints with CBR for data plane protection.
+
+
+
+rzRF
