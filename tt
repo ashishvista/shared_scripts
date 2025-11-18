@@ -1,40 +1,16 @@
-169.46.9.208/28,
-169.46.97.32/27,
-10.177.94.192/26,
-169.48.197.32/28,
-169.48.231.32/27,
-10.185.217.192/26,
-67.228.112.80/28,
-67.228.231.192/27,
-10.37.169.128/26,
-169.50.22.224/27,
-10.134.69.192/26,
-161.156.184.160/28,
-161.156.185.160/27,
-10.240.247.0/26,
-149.81.65.224/28,
-149.81.112.128/27,
-10.123.216.64/26
-
-R-00267204
-R-00267206
-https://www.linkedin.com/in/gaurav-singh-11860b201/
+for complete enterprise rag chatbot tell me whether this is good stack or not? 
+langgraph 
+langchain 
+llamaindex 
+langfuse 
+chatwoot or Assistant-UI ?
+qdrant or postgres pgvector
+BAAI bge-reranker
+llm- gpt oss or qwen 3 with tool calling support
+chatwoot / liveperson/ aws connect for human agent flow ?
+confluence/Amazon Bedrock Knowledge Bases 
+suggest me if i am correct or not
 
 
-function decodeObjectBase64(obj) {
-  const result = {};
-  for (const [key, value] of Object.entries(obj)) {
-    try {
-      result[key] = Buffer.from(value, "base64").toString("utf-8");
-    } catch {
-      result[key] = value;
-    }
-  }
-  return result;
-}
 
-// Example usage:
-const data = { name: "U2FtcGxl", status: "YWN0aXZl" };
-const decoded = decodeObjectBase64(data);
-
-https://cloud.ibm.com/docs/cloud-shell?topic=cloud-shell-cs-ip-ranges
+EMQX- mqtt over websocket for messaging and events

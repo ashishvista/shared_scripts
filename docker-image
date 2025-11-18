@@ -1,9 +1,11 @@
-env -0 | sort -z | tr '\0' '\n'
-https://www.crazygames.com/game/attack-of-duty
+If your system has a global Artifactory configured, run:
+
+pip install <package> --no-index --find-links https://pypi.org/simple
 
 
-CBR will protect management operations on your Code Engine application, but will not block public internet API requests to your Node.js REST endpoint. You need to implement application-level security or switch to private endpoints with CBR for data plane protection.
+But the simpler version is:
+
+pip install <package> --index-url https://pypi.org/simple --no-extra-index-url
 
 
-
-rzRF2401:4900:1c64:4ced:695f:2849:39c9:858c
+This overrides everything else.
