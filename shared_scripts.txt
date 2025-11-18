@@ -2,8 +2,10 @@ from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(
     model="gpt-4o-mini",
-    api_key="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"
+    api_key="xx"
 )
 
 response = llm.invoke("Write a short poem about Python.")
 print(response.content)
+
+//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
