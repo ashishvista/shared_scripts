@@ -1,168 +1,52 @@
-{
-  "name": "Attach to nodemon",
-  "type": "node",
-  "request": "attach",
-  "port": 9229,
-  "restart": true
-}
+import numpy as np
 
+# 1. Create arrays
+a = np.array([1, 2, 3, 4, 5])
+b = np.arange(10)                # 0 through 9
+c = np.linspace(0, 1, 5)         # five values evenly spaced between 0 and 1
+d = np.zeros((2, 3))             # a 2×3 array of zeros
+e = np.eye(3)                    # 3×3 identity matrix
 
-POST https://api.liveperson.net/api/account/{account_id}/login
-Content-Type: application/json
+print("a:", a)
+print("b:", b)
+print("c:", c)
+print("d:", d, sep="\n")
+print("e:", e, sep="\n")
 
-{
-  "client_id": "your-client-id",
-  "client_secret": "your-client-secret",
-  "grant_type": "client_credentials"
-}
+# 2. Shape & indexing
+print("Shape of d:", d.shape)
+d[1,2] = 7                           # set element in second row, third column
+print("d after modification:", d, sep="\n")
 
-const axios = require('axios');
-const HttpsProxyAgent = require('https-proxy-agent');
+# 3. Arithmetic/vectorized operations
+x = np.array([10, 20, 30])
+y = np.array([1, 2, 3])
+print("x + y:", x + y)
+print("x * 2:", x * 2)
+print("x ** 2:", x ** 2)
 
-// URL-encoded credentials if needed
-const proxyUrl = 'http://USERNAME:PASSWORD@proxy.example.com:8080';
-const httpsAgent = new HttpsProxyAgent(proxyUrl);
+# 4. Universal functions (“ufuncs”)
+z = np.linspace(-np.pi, np.pi, 100)
+sin_z = np.sin(z)
+cos_z = np.cos(z)
+print("First few sin_z:", sin_z[:5])
 
-axios.get('https://www.google.com', { httpsAgent })
-  .then(response => {
-    console.log('Status:', response.status);ˀ	
-    console.log('First 200 chars of response:', response.data.substring(0, 200));
-  })
-  .catch(error => {
-    console.error('Error fetching:', error.message);
-  });
+# 5. Aggregation / reduction
+print("Sum of x:", np.sum(x))
+print("Mean of y:", np.mean(y))
+print("Maximum of b:", np.max(b))
 
-###
-taskkill /F /IM node.exe
-####
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Debug with Nodemon",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/nodemon/bin/nodemon.js",
-      "program": "${workspaceFolder}/app.js",
-      "restart": true,
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-    }
-  ]
-}
+# 6. Reshaping / matrix operations
+M = np.arange(12).reshape((3,4))
+print("M:", M, sep="\n")
+Mt = M.T
+print("M transpose:", Mt, sep="\n")
+# matrix multiplication (dot product)
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+print("A @ B:", A @ B, sep="\n")
 
-###
-
-"outFiles": ["${workspaceFolder}/dist/**/*.js"]
-####
-
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "NPM: start-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run",
-        "start-dev"
-      ],
-      "env": {
-        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
-      }
-    }
-  ]
-}
-
-####
-
-NODE_TLS_REJECT_UNAUTHORIZED=0 npm install
-
-npm config set strict-ssl false
-
-git config --global user.name "Ashish"
-git config --global user.email "ashishvista@gmail.com"
-
-
-const lpm = require("lp-messaging-sdk");
-
-const proxy = {
-  host: 'yourHost.com',
-  port: 8080,
-  protocol: 'http',
-  path: 'user/1',
-  auth: {
-    username: 'username',
-    password: 'password',
-  }
-};
-
-lpm.configureProxy(proxy);
-
-const connection = lpm.createConnection({
-  appId: 'quick_start',
-  accountId: '12345678',
-  userType: lpm.UserType.BRAND,
-});
-
-
-Step 1: Find the Process Using Port 3000
-Run:
-
-text
-netstat -aon | findstr :3000
-Look at the rightmost column; this is the PID (Process ID) of the process using port 3000.​
-
-Step 2: Kill the Process by PID
-Suppose the PID you found is 1234, run:
-
-text
-taskkill /PID 1234 /F
-Replace 1234 with your actual PID. The /F flag forces termination.​
-
-Optional: PowerShell Alternative
-You can also use:
-
-text
-Stop-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess -Force
-This PowerShell command finds and kills the process using port 3000 directly
-
-
-docker login -u iamapikey -p <your_api_key> <region>.icr.io
-docker pull <region>.icr.io/<namespace>/<image>:<tag>
-
-
-kubectl run test-pod --image=<private-registry>/<image-name>:<tag> \
-  --serviceaccount=<service-account-name> \
-  --restart=Never
-
-
-
-kubectl run test-pod --image=<private-registry>/<image-name>:<tag> \
-  --overrides='{ "spec": { "serviceAccountName": "my-service-account" } }' \
-  --restart=Never
-
-
-
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: example-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: example
-  template:
-    metadata:
-      labels:
-        app: example
-    spec:
-      serviceAccountName: my-service-account
-      containers:
-      - name: example-container
-        image: example-image:latest
-        ports:
-        - containerPort: 80
+# 7. Boolean indexing / filtering
+arr = np.array([10, 15, 20, 25, 30])
+mask = arr > 20
+print("Values > 20:", arr[mask])
