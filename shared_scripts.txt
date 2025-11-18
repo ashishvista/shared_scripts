@@ -10,6 +10,3 @@ print(response.content)
 
 //sk-proj-t7z_
 fQJ7cIn8gLBv30kylZamLF7u3zoOlehUWsRa4UZdYVmv0_
-N7TpWKmoaqSBszxGHJ7xn4EiT3BlbkFJ6zgCwUNmrukA9b_
-g86lUp04NZ1S39Hr2d7QR7g56RaTXAnrv_
-1iL7LwiQufbUvEo8o0PgSp6gA
