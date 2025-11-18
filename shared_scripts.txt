@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(
     model="gpt-4o-mini",
-    api_key="xx"
+    
 )
 
 response = llm.invoke("Write a short poem about Python.")
