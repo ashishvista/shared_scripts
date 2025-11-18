@@ -1,52 +1,9 @@
-import numpy as np
+from langchain_openai import ChatOpenAI
 
-# 1. Create arrays
-a = np.array([1, 2, 3, 4, 5])
-b = np.arange(10)                # 0 through 9
-c = np.linspace(0, 1, 5)         # five values evenly spaced between 0 and 1
-d = np.zeros((2, 3))             # a 2×3 array of zeros
-e = np.eye(3)                    # 3×3 identity matrix
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
+    api_key="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"
+)
 
-print("a:", a)
-print("b:", b)
-print("c:", c)
-print("d:", d, sep="\n")
-print("e:", e, sep="\n")
-
-# 2. Shape & indexing
-print("Shape of d:", d.shape)
-d[1,2] = 7                           # set element in second row, third column
-print("d after modification:", d, sep="\n")
-
-# 3. Arithmetic/vectorized operations
-x = np.array([10, 20, 30])
-y = np.array([1, 2, 3])
-print("x + y:", x + y)
-print("x * 2:", x * 2)
-print("x ** 2:", x ** 2)
-
-# 4. Universal functions (“ufuncs”)
-z = np.linspace(-np.pi, np.pi, 100)
-sin_z = np.sin(z)
-cos_z = np.cos(z)
-print("First few sin_z:", sin_z[:5])
-
-# 5. Aggregation / reduction
-print("Sum of x:", np.sum(x))
-print("Mean of y:", np.mean(y))
-print("Maximum of b:", np.max(b))
-
-# 6. Reshaping / matrix operations
-M = np.arange(12).reshape((3,4))
-print("M:", M, sep="\n")
-Mt = M.T
-print("M transpose:", Mt, sep="\n")
-# matrix multiplication (dot product)
-A = np.array([[1,2],[3,4]])
-B = np.array([[5,6],[7,8]])
-print("A @ B:", A @ B, sep="\n")
-
-# 7. Boolean indexing / filtering
-arr = np.array([10, 15, 20, 25, 30])
-mask = arr > 20
-print("Values > 20:", arr[mask])
+response = llm.invoke("Write a short poem about Python.")
+print(response.content)
