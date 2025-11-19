@@ -1,1 +1,16 @@
-https://developers.liveperson.com/messaging-platform-sdk-examples.html#accept-any-waiting-ring
+const amqp = require("amqplib");
+
+async function testRabbitMQ() {
+  const RABBITMQ_URL = "amqp://username:password@host:5672";
+
+  try {
+    const conn = await amqp.connect(RABBITMQ_URL);
+    console.log("✔ RabbitMQ connection successful!");
+
+    await conn.close();
+  } catch (err) {
+    console.error("✘ RabbitMQ connection failed:", err.message);
+  }
+}
+
+testRabbitMQ();
