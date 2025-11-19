@@ -1,16 +1,22 @@
 const amqp = require("amqplib");
 
-async function testRabbitMQ() {
-  const RABBITMQ_URL = "amqp://username:password@host:5672";
-
+async function connectSecure() {
   try {
-    const conn = await amqp.connect(RABBITMQ_URL);
-    console.log("✔ RabbitMQ connection successful!");
+    const amqpsUrl = process.env.RABBIT_AMQPS_URL;
 
+    // Base64 CA → Buffer → string
+    const caDecoded = Buffer.from(process.env.CA_CERT_BASE64, "base64").toString("utf8");
+
+    const conn = await amqp.connect(amqpsUrl, {
+      ca: [caDecoded],
+      rejectUnauthorized: true
+    });
+
+    console.log("✔ AMQPS connected with Base64 CA");
     await conn.close();
   } catch (err) {
-    console.error("✘ RabbitMQ connection failed:", err.message);
+    console.error("✘ AMQPS connection failed:", err);
   }
 }
 
-testRabbitMQ();
+connectSecure();
