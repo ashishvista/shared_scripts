@@ -1,1 +1,1 @@
-node --inspect-brk ./node_modules/.bin/mocha test.js
+ssh-keygen -t ed25519 -C "org1_key" -f ~/.ssh/id_ed25519_org1
