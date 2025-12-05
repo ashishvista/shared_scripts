@@ -1,17 +1,1 @@
-ssh-keygen -t ed25519 -C "org1_key" -f ~/.ssh/id_ed25519_org1
-
-
-Example ~/.ssh/config (Final Version)
-Host *
-    AddKeysToAgent yes
-    UseKeychain yes
-
-Host gitlab-org1
-    HostName gitlab.com
-    User git
-    IdentityFile ~/.ssh/id_ed25519_org1
-
-Host gitlab-org2
-    HostName gitlab.com
-    User git
-    IdentityFile ~/.ssh/id_ed25519_org2
+Pradeep has over 12 years of experience in DevOps and cloud engineering, where he has led teams and continuously improved how applications are built and deployed. He works with AWS, Kubernetes, Terraform, and CI/CD pipelines to accelerate deployments while ensuring they are safer and more reliable. He enjoys guiding teams in adopting best-practice DevOps workflows and resolving bottlenecks that slow progress. He has also supported RBI and ISO audits, and enhanced security and monitoring for cloud systems. His aim is always to design simple, effective solutions that benefit both the technical team and the business.
