@@ -1,1 +1,2 @@
-Pradeep has over 12 years of experience in DevOps and cloud engineering, where he has led teams and continuously improved how applications are built and deployed. He works with AWS, Kubernetes, Terraform, and CI/CD pipelines to accelerate deployments while ensuring they are safer and more reliable. He enjoys guiding teams in adopting best-practice DevOps workflows and resolving bottlenecks that slow progress. He has also supported RBI and ISO audits, and enhanced security and monitoring for cloud systems. His aim is always to design simple, effective solutions that benefit both the technical team and the business.
+ALTER TABLE orders
+ALTER COLUMN order_time SET DATA TYPE TIMESTAMP WITH TIME ZONE;
