@@ -7,3 +7,6 @@ CAST(
         TO_TIMESTAMP_TZ(REPLACE(?, 'Z', '+00:00'))
         AS TIMESTAMP
     )
+
+
+TIMESTAMP_FORMAT(REPLACE(?, 'Z', ''), 'YYYY-MM-DD"T"HH24:MI:SS.FF3')
