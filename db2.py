@@ -10,3 +10,5 @@ CAST(
 
 
 TIMESTAMP_FORMAT(REPLACE(?, 'Z', ''), 'YYYY-MM-DD"T"HH24:MI:SS.FF3')
+
+https://ashish-kumar.atlassian.net/wiki/external/YWUxY2Q1MzBlODFjNDBlNWFjMTAyYmYzYTU1ZDNlNjg
